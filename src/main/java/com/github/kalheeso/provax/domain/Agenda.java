@@ -15,7 +15,7 @@ public class Agenda {
     private long id;
     // Data e Hora do agendamento
     private LocalDateTime dataHora;
-    private String situacao;
+    private Situacao situacao;
     private String dataSituacao;
     private String obervacao;
 

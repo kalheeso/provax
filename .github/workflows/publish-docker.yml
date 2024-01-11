@@ -22,5 +22,4 @@ jobs:
 
       - name: push image
         run: |
-          docker tag nogueiralegacy/provax:latest
           docker push nogueiralegacy/provax:latest

@@ -21,4 +21,6 @@ jobs:
         run: docker-compose build
 
       - name: push image
-        run: docker push nogueiralegacy/provax:latest
+        run: |
+          docker tag nogueiralegacy/provax:latest
+          docker push nogueiralegacy/provax:latest

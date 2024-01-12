@@ -34,9 +34,19 @@ jobs:
     needs: publish_image
     runs-on: ubuntu-latest
     steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Create JAR file
+        run: mvn clean package
+
       - name: Connect to host
         run: |
           echo "$SSH_PRIVATE_KEY" > key.pem
           chmod 400 key.pem
-          ssh -i key.pem -o StrictHostKeyChecking=no $HOST_USER@$HOST_IP source /root/projects/script.sh
-    
+          ssh -i key.pem -o  StrictHostKeyChecking=no $HOST_USER@$HOST_IP -d source /root/projects/script.sh
+          
+          ssh -i key.pem -o  StrictHostKeyChecking=no $HOST_USER@$HOST_IP 'pwd scp /target/*.jar $HOST_USER@$HOST_IP:/projects/provax' 

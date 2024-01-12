@@ -3,11 +3,10 @@ ENV APP_DIR=/projects/provax
 
 RUN mkdir -p $APP_DIR
 WORKDIR $APP_DIR
-COPY /src  $APP_DIR/src
-COPY pom.xml $APP_DIR
+COPY target/*.jar  $APP_DIR
 
+RUN mv *.jar app.jar
 
-RUN mvn install
-CMD ["mvn", "spring-boot:run"]
+CMD ["java", "-jar", "app.jar"]
 
 

@@ -16,6 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Create JAR file
+        run: mvn clean package
+
       - name: login to Docker Hub
         run: |
           docker login -u nogueiralegacy -p ${{ secrets.DOCKERHUB_TOKEN }}
@@ -34,15 +43,6 @@ jobs:
     needs: publish_image
     runs-on: ubuntu-latest
     steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-      - name: Create JAR file
-        run: mvn clean package
-
       - name: Connect to host
         run: |
           echo "$SSH_PRIVATE_KEY" > key.pem

@@ -15,4 +15,12 @@ public class AlergiaService {
     public Iterable<Alergia> findAll() {
         return alergiaRepository.findAll();
     }
+
+    public Alergia create(Alergia alergia) {
+        return alergiaRepository.save(alergia);
+    }
+
+    public void delete(Alergia alergia) {
+        alergiaRepository.delete(alergia);
+    }
 }

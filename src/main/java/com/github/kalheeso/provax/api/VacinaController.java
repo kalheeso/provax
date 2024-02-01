@@ -1,10 +1,8 @@
-package com.github.kalheeso.provax.controller;
+package com.github.kalheeso.provax.api;
 
 import com.github.kalheeso.provax.domain.Vacina;
 import com.github.kalheeso.provax.service.VacinaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path ="/vacina")
@@ -16,7 +14,17 @@ public class VacinaController {
     }
 
     @GetMapping
-    public Iterable<Vacina> getUsuarios() {
+    public Iterable<Vacina> getVacinas() {
         return vacinaService.findAll();
+    }
+
+    @PostMapping
+    public Vacina createVacina(Vacina vacina) {
+        return vacinaService.create(vacina);
+    }
+
+    @DeleteMapping
+    public void deleteVacina(Vacina vacina) {
+        vacinaService.delete(vacina);
     }
 }

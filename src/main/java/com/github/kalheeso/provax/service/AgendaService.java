@@ -15,4 +15,12 @@ public class AgendaService {
     public Iterable<Agenda> findAll() {
         return agendaRepository.findAll();
     }
+
+    public Agenda create(Agenda agenda) {
+        return agendaRepository.save(agenda);
+    }
+
+    public void delete(Agenda agenda) {
+        agendaRepository.delete(agenda);
+    }
 }

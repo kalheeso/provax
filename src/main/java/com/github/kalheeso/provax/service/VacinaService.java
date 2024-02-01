@@ -15,4 +15,12 @@ public class VacinaService {
     public Iterable<Vacina> findAll() {
         return vacinaRepository.findAll();
     }
+
+    public Vacina create(Vacina vacina) {
+        return vacinaRepository.save(vacina);
+    }
+
+    public void delete(Vacina vacina) {
+        vacinaRepository.delete(vacina);
+    }
 }

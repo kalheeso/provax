@@ -1,10 +1,8 @@
-package com.github.kalheeso.provax.controller;
+package com.github.kalheeso.provax.api;
 
 import com.github.kalheeso.provax.domain.Agenda;
 import com.github.kalheeso.provax.service.AgendaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path ="/agenda")
@@ -16,7 +14,17 @@ public class AgendaController {
     }
 
     @GetMapping
-    public Iterable<Agenda> getUsuarios() {
+    public Iterable<Agenda> getAgendas() {
         return agendaService.findAll();
+    }
+
+    @PostMapping
+    public Agenda createAgenda(Agenda agenda) {
+        return agendaService.create(agenda);
+    }
+
+    @DeleteMapping
+    public void deleteAgenda(Agenda agenda) {
+        agendaService.delete(agenda);
     }
 }

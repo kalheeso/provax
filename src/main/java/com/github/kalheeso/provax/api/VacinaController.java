@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path ="/vacina")
+@CrossOrigin(origins = "http://localhost:4200")
 public class VacinaController {
     private final VacinaService vacinaService;
 
@@ -23,8 +24,8 @@ public class VacinaController {
         return vacinaService.create(vacina);
     }
 
-    @DeleteMapping
-    public void deleteVacina(Vacina vacina) {
-        vacinaService.delete(vacina);
+    @DeleteMapping(value = "/{id}")
+    public void deleteVacina(@PathVariable("id") Long id) {
+        vacinaService.deleteById(id);
     }
 }

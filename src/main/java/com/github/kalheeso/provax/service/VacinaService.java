@@ -20,7 +20,7 @@ public class VacinaService {
         return vacinaRepository.save(vacina);
     }
 
-    public void delete(Vacina vacina) {
-        vacinaRepository.delete(vacina);
+    public void deleteById(Long id) {
+        vacinaRepository.deleteById(id);
     }
 }

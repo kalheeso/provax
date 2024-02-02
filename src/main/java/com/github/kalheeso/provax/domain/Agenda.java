@@ -17,7 +17,7 @@ public class Agenda {
     private LocalDateTime dataHora;
     private Situacao situacao;
     private String dataSituacao;
-    private String obervacao;
+    private String obervacoes;
 
     @ManyToOne
     @JoinColumn(nullable = false, name = "vacina_id")

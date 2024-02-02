@@ -40,13 +40,14 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody UsuarioDTO usuarioDTO) {
+    public ResponseEntity<Usuario> register(@RequestBody UsuarioDTO usuarioDTO) {
+        Usuario u = new Usuario();
         try {
-            usuarioService.saveUsuario(usuarioDTO);
-            return ResponseEntity.ok("Usuário registrado com sucesso!");
+            u = usuarioService.saveUsuario(usuarioDTO);
+            return ResponseEntity.ok(u);
 
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body("Erro ao criar usuário: " + e.getMessage());
+            return ResponseEntity.badRequest().body(u);
         }
     }
 }

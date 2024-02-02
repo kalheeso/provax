@@ -1,4 +1,4 @@
-package com.github.nogueiralegacy.construcao.utils.dto;
+package com.github.kalheeso.provax.utils.dto;
 
-public record LoginResponseDTO(String token, String expirationDate) {
+public record LoginResponseDTO(String token, Long usuarioID) {
 }

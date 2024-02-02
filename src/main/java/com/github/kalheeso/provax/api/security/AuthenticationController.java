@@ -1,10 +1,10 @@
 package com.github.kalheeso.provax.api.security;
 
+import com.github.kalheeso.provax.domain.Usuario;
 import com.github.kalheeso.provax.service.UsuarioService;
 import com.github.kalheeso.provax.utils.dto.LoginDTO;
-import com.github.nogueiralegacy.construcao.utils.dto.LoginResponseDTO;
+import com.github.kalheeso.provax.utils.dto.LoginResponseDTO;
 import com.github.kalheeso.provax.utils.dto.UsuarioDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/auth")
@@ -32,9 +34,12 @@ public class AuthenticationController {
         var authentication = this.authenticationManager.authenticate(usernamePassword);
 
         var token = tokenService.generateToken((Login) authentication.getPrincipal());
-        var tempoDeExpiracao = tokenService.getTempoDeExpiracao();
 
-        return ResponseEntity.ok(new LoginResponseDTO(token, tempoDeExpiracao));
+        Usuario usuario = usuarioService.findByEmail(loginDTO.username());
+
+        var usuarioID = usuario.getId();
+
+        return ResponseEntity.ok(new LoginResponseDTO(token, usuarioID));
     }
 
     @PostMapping("/register")

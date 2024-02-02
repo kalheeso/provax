@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.Setter;
 
+@Data
 @Entity
 public class Vacina {
     @Setter(onMethod_ = @Deprecated)

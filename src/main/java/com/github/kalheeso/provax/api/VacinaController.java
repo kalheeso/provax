@@ -20,7 +20,7 @@ public class VacinaController {
     }
 
     @PostMapping
-    public Vacina createVacina(Vacina vacina) {
+    public Vacina createVacina(@RequestBody Vacina vacina) {
         return vacinaService.create(vacina);
     }
 

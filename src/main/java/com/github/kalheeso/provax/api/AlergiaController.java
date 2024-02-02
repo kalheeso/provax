@@ -20,7 +20,7 @@ public class AlergiaController {
     }
 
     @PostMapping
-    public Alergia createAlergia(Alergia alergia) {
+    public Alergia createAlergia(@RequestBody Alergia alergia) {
         return alergiaService.create(alergia);
     }
 

@@ -1,6 +1,7 @@
 package com.github.kalheeso.provax.service;
 
 import com.github.kalheeso.provax.domain.Usuario;
+import com.github.kalheeso.provax.domain.UsuarioRole;
 import com.github.kalheeso.provax.repository.UsuarioRepository;
 import com.github.kalheeso.provax.utils.BCryptHasher;
 import com.github.kalheeso.provax.utils.dto.UsuarioDTO;
@@ -20,7 +21,7 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public void saveUsuario(UsuarioDTO usuarioDTO) throws IllegalArgumentException {
+    public Usuario saveUsuario(UsuarioDTO usuarioDTO) throws IllegalArgumentException {
         if (!isUsuarioValido(usuarioDTO)) {
             throw new IllegalArgumentException("Formato de usuario inválido, os campos 'email', 'password', 'nome' e 'role' são obrigatórios");
         }
@@ -30,13 +31,13 @@ public class UsuarioService {
 
         String passwordHash = new BCryptHasher().encode(usuarioDTO.password());
 
-        Usuario usuario = new Usuario(usuarioDTO.email(), passwordHash, usuarioDTO.role(), usuarioDTO.nome(), usuarioDTO.dataNascimento(), usuarioDTO.sexo(), usuarioDTO.logradouro(), usuarioDTO.numero(), usuarioDTO.setor(), usuarioDTO.cidade(), usuarioDTO.uf());
+        Usuario usuario = new Usuario(usuarioDTO.email(), passwordHash, UsuarioRole.ADMIN, usuarioDTO.nome(), usuarioDTO.dataNascimento(), usuarioDTO.sexo(), usuarioDTO.logradouro(), usuarioDTO.numero(), usuarioDTO.setor(), usuarioDTO.cidade(), usuarioDTO.uf());
 
-        usuarioRepository.save(usuario);
+        return usuarioRepository.save(usuario);
     }
 
     private boolean isUsuarioValido(UsuarioDTO usuarioDTO) {
-        return usuarioDTO != null && usuarioDTO.password() != null  && usuarioDTO.email() != null && usuarioDTO.role() != null;
+        return usuarioDTO != null && usuarioDTO.password() != null  && usuarioDTO.email() != null;
     }
 
     public boolean usuarioExistsByEmail(String email) throws IllegalArgumentException{

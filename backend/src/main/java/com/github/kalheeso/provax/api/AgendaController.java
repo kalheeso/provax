@@ -20,7 +20,7 @@ public class AgendaController {
     }
 
     @PostMapping
-    public Agenda createAgenda(Agenda agenda) {
+    public Agenda createAgenda(@RequestBody Agenda agenda) {
         return agendaService.save(agenda);
     }
 

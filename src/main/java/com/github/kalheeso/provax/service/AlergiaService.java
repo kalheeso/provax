@@ -20,7 +20,7 @@ public class AlergiaService {
         return alergiaRepository.save(alergia);
     }
 
-    public void delete(Alergia alergia) {
-        alergiaRepository.delete(alergia);
+    public void deleteById(Long id) {
+        alergiaRepository.deleteById(id);
     }
 }

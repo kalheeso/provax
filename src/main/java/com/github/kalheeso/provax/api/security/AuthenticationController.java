@@ -8,15 +8,12 @@ import com.github.kalheeso.provax.utils.dto.UsuarioDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/auth")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AuthenticationController {
     private final AuthenticationManager authenticationManager;
     private final UsuarioService usuarioService;
@@ -44,11 +41,11 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody UsuarioDTO usuarioDTO) {
-        try{
+        try {
             usuarioService.saveUsuario(usuarioDTO);
             return ResponseEntity.ok("Usuário registrado com sucesso!");
 
-        } catch(IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body("Erro ao criar usuário: " + e.getMessage());
         }
     }

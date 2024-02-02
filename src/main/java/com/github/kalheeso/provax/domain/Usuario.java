@@ -48,7 +48,7 @@ public class Usuario {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<Alergia> alergias = new HashSet<>();
 
-    protected Usuario() {
+    public Usuario() {
     }
 
     public Usuario(String email, String password, UsuarioRole role, String nome, LocalDate dataNascimento, char sexo, String logradouro, int numero, String setor, String cidade, String uf) {

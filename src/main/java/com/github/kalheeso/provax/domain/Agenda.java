@@ -4,11 +4,12 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Agenda {
+public class Agenda implements Serializable {
     @Setter(onMethod_ = @Deprecated)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

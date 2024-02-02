@@ -22,6 +22,7 @@ jobs:
 
       - name: build image
         run: docker-compose build
+        working-directory: ./backend
 
       - name: tag image
         run: docker tag provax nogueiralegacy/provax:latest

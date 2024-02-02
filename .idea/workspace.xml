@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a5016fb-7877-4d16-bc96-bc0c19d57219" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/ProvaxApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/ProvaxApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/AgendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/AlergiaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/AlergiaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/VacinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/VacinaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/security/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/security/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/security/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/security/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/security/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/security/SecurityFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/api/security/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/security/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/domain/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/domain/Agenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/domain/Alergia.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/domain/Alergia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/domain/Situacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/domain/Situacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/domain/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/domain/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/domain/UsuarioRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/domain/UsuarioRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/domain/Vacina.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/domain/Vacina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/repository/AgendaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/repository/AgendaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/repository/AlergiaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/repository/AlergiaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/repository/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/repository/VacinaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/repository/VacinaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/service/AgendaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/service/AgendaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/service/AlergiaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/service/AlergiaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/service/AuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/service/AuthorizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/service/VacinaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/service/VacinaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/utils/BCryptHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/utils/BCryptHasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/utils/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/utils/dto/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/utils/dto/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/utils/dto/LoginResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kalheeso/provax/utils/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/utils/dto/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kalheeso/provax/utils/BCryptHasherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/github/kalheeso/provax/utils/BCryptHasherTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2bk0dWL98Wf8rVEytN5YHqUvjf8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.BCryptHasherTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BCryptHasherTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ProvaxApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/projects/provax&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\projects\provax\backend" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ProvaxApplication">
+    <configuration name="BCryptHasherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="provax" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.kalheeso.provax.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.kalheeso.provax.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.github.kalheeso.provax.utils.BCryptHasherTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BCryptHasherTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="provax" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.kalheeso.provax.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.kalheeso.provax.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.github.kalheeso.provax.utils.BCryptHasherTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProvaxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="provax" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.kalheeso.provax.ProvaxApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BCryptHasherTest" />
+        <item itemvalue="JUnit.BCryptHasherTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a5016fb-7877-4d16-bc96-bc0c19d57219" name="Changes" comment="" />
+      <created>1706743856703</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706743856703</updated>
+      <workItem from="1706744748361" duration="932000" />
+      <workItem from="1706745695371" duration="16000" />
+      <workItem from="1706745785610" duration="4138000" />
+      <workItem from="1706749951218" duration="3474000" />
+      <workItem from="1706757379155" duration="3363000" />
+      <workItem from="1706829959864" duration="14876000" />
+      <workItem from="1706894402248" duration="659000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/github/kalheeso/provax/api/VacinaController.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -28,3 +28,4 @@ jobs:
         cache: maven
     - name: Testig with maven
       run: mvn clean test
+      working-directory: ./backend

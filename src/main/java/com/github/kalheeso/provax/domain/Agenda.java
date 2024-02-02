@@ -6,7 +6,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-
+@Data
 @Entity
 public class Agenda {
     @Setter(onMethod_ = @Deprecated)

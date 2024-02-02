@@ -19,15 +19,16 @@ public class UsuarioController {
         return usuarioService.findAll();
     }
 
-    @GetMapping("/{email}")
-    public ResponseEntity findByEmail(@PathVariable("email") String email) {
+    @GetMapping("/{id}")
+    public ResponseEntity findByID(@PathVariable("id") Long id) {
         Usuario usuario;
         try {
-            usuario = usuarioService.findByEmail(email);
+            usuario = usuarioService.findById(id);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body("Erro ao buscar usuario: " + e.getMessage());
         }
 
         return ResponseEntity.ok(usuario);
     }
+
 }

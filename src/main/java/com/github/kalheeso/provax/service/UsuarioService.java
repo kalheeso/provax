@@ -57,4 +57,16 @@ public class UsuarioService {
         }
         throw new IllegalArgumentException("Usuario não encotrado. Nickname: " + email);
     }
+
+    public Usuario findById(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("O parametro 'id' não pode ser nulo");
+        }
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
+
+        if (usuario.isPresent()) {
+            return usuario.get();
+        }
+        throw new IllegalArgumentException("Usuario não encotrado. Nickname: " + id);
+    }
 }

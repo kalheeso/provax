@@ -3,7 +3,7 @@ package com.github.kalheeso.provax.service;
 import com.github.kalheeso.provax.domain.Usuario;
 import com.github.kalheeso.provax.repository.UsuarioRepository;
 import com.github.kalheeso.provax.utils.BCryptHasher;
-import com.github.kalheeso.provax.utils.dto.UsuarioRequestDTO;
+import com.github.kalheeso.provax.utils.dto.UsuarioDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -20,23 +20,23 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public void saveUsuario(UsuarioRequestDTO usuarioRequestDTO) throws IllegalArgumentException {
-        if (!isUsuarioValido(usuarioRequestDTO)) {
+    public void saveUsuario(UsuarioDTO usuarioDTO) throws IllegalArgumentException {
+        if (!isUsuarioValido(usuarioDTO)) {
             throw new IllegalArgumentException("Formato de usuario inválido, os campos 'email', 'password', 'nome' e 'role' são obrigatórios");
         }
-        if (usuarioExistsByEmail(usuarioRequestDTO.email())) {
+        if (usuarioExistsByEmail(usuarioDTO.email())) {
             throw new IllegalArgumentException("Email já cadastrado");
         }
 
-        String passwordHash = new BCryptHasher().encode(usuarioRequestDTO.password());
+        String passwordHash = new BCryptHasher().encode(usuarioDTO.password());
 
-        Usuario usuario = new Usuario(usuarioRequestDTO.email(), passwordHash, usuarioRequestDTO.role(), usuarioRequestDTO.nome(), usuarioRequestDTO.dataNascimento(), usuarioRequestDTO.sexo(), usuarioRequestDTO.logradouro(), usuarioRequestDTO.numero(), usuarioRequestDTO.setor(), usuarioRequestDTO.cidade(), usuarioRequestDTO.uf());
+        Usuario usuario = new Usuario(usuarioDTO.email(), passwordHash, usuarioDTO.role(), usuarioDTO.nome(), usuarioDTO.dataNascimento(), usuarioDTO.sexo(), usuarioDTO.logradouro(), usuarioDTO.numero(), usuarioDTO.setor(), usuarioDTO.cidade(), usuarioDTO.uf());
 
         usuarioRepository.save(usuario);
     }
 
-    private boolean isUsuarioValido(UsuarioRequestDTO usuarioRequestDTO) {
-        return usuarioRequestDTO != null && usuarioRequestDTO.password() != null  && usuarioRequestDTO.email() != null && usuarioRequestDTO.role() != null;
+    private boolean isUsuarioValido(UsuarioDTO usuarioDTO) {
+        return usuarioDTO != null && usuarioDTO.password() != null  && usuarioDTO.email() != null && usuarioDTO.role() != null;
     }
 
     public boolean usuarioExistsByEmail(String email) throws IllegalArgumentException{

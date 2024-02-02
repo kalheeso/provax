@@ -2,7 +2,7 @@ package com.github.kalheeso.provax.api.security;
 
 import com.github.kalheeso.provax.domain.Usuario;
 import com.github.kalheeso.provax.repository.UsuarioRepository;
-import com.github.kalheeso.provax.utils.dto.LoginRequestDTO;
+import com.github.kalheeso.provax.utils.dto.LoginDTO;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,8 +18,8 @@ import java.util.Optional;
 
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
-    UsuarioRepository usuarioRepository;
     TokenService tokenService;
+    UsuarioRepository usuarioRepository;
 
     public SecurityFilter(TokenService tokenService, UsuarioRepository usuarioRepository) {
         this.tokenService = tokenService;
@@ -37,7 +37,7 @@ public class SecurityFilter extends OncePerRequestFilter {
                 throw new ServletException("Usuário não encontrado");
             }
 
-            UserDetails login = LoginRequestDTO.usuarioToLogin(usuario.get());
+            UserDetails login = LoginDTO.usuarioToLogin(usuario.get());
 
             var authentication = new UsernamePasswordAuthenticationToken(login, null, login.getAuthorities());
 

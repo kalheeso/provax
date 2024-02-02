@@ -3,9 +3,9 @@ package com.github.kalheeso.provax.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+
 import lombok.Data;
+import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
 @Entity
 public class Usuario {
     @Setter(onMethod_ = @Deprecated)
@@ -74,4 +74,21 @@ public class Usuario {
         alergias.remove(alergia);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Usuario usuario = (Usuario) o;
+
+        if (!email.equals(usuario.email)) return false;
+        return password.equals(usuario.password);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = email.hashCode();
+        result = 31 * result + password.hashCode();
+        return result;
+    }
 }

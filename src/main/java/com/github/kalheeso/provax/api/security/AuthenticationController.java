@@ -1,9 +1,10 @@
 package com.github.kalheeso.provax.api.security;
 
 import com.github.kalheeso.provax.service.UsuarioService;
-import com.github.kalheeso.provax.utils.dto.LoginRequestDTO;
-import com.github.kalheeso.provax.utils.dto.LoginResponseDTO;
-import com.github.kalheeso.provax.utils.dto.UsuarioRequestDTO;
+import com.github.kalheeso.provax.utils.dto.LoginDTO;
+import com.github.nogueiralegacy.construcao.utils.dto.LoginResponseDTO;
+import com.github.kalheeso.provax.utils.dto.UsuarioDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/auth")
 public class AuthenticationController {
+    @Autowired
     private final AuthenticationManager authenticationManager;
     private final UsuarioService usuarioService;
     private final TokenService tokenService;
@@ -26,7 +28,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody LoginRequestDTO loginDTO) {
+    public ResponseEntity login(@RequestBody LoginDTO loginDTO) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(loginDTO.username(), loginDTO.password());
         var authentication = this.authenticationManager.authenticate(usernamePassword);
 
@@ -37,9 +39,9 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody UsuarioRequestDTO usuarioRequestDTO) {
+    public ResponseEntity<String> register(@RequestBody UsuarioDTO usuarioDTO) {
         try{
-            usuarioService.saveUsuario(usuarioRequestDTO);
+            usuarioService.saveUsuario(usuarioDTO);
             return ResponseEntity.ok("Usuário registrado com sucesso!");
 
         } catch(IllegalArgumentException e) {

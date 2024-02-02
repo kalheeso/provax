@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Setter;
 
-@Data
 @Entity
 public class Alergia {
     @Setter(onMethod_ = @Deprecated)

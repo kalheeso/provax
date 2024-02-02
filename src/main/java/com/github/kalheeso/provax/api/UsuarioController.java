@@ -20,7 +20,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{email}")
-    public ResponseEntity findByNickname(@PathVariable("email") String email) {
+    public ResponseEntity findByEmail(@PathVariable("email") String email) {
         Usuario usuario;
         try {
             usuario = usuarioService.findByEmail(email);

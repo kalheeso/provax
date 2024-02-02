@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path ="/agenda")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://143.198.75.125:4200")
 public class AgendaController {
     private final AgendaService agendaService;
 

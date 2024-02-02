@@ -33,7 +33,10 @@ build/
 .vscode/
 
 ### IntelliJ ###
-.idea
+*.iml
+*.ipr
+*.iws
+.idea/
 
 ### Docker env
 .env

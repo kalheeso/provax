@@ -1,0 +1,4 @@
+<div class="checkbox-field">
+  <p-checkbox [value]="value" [inputId]="id" [(ngModel)]="model" (ngModelChange)="modelChange.emit($event)"></p-checkbox>
+  <label [for]="id">{{label}}</label>
+</div>

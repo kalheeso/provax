@@ -1,0 +1,35 @@
+<div>
+  <div class="title">
+    <h1>Alergias Cadastradas</h1>
+  </div>
+
+  <div class="allAppointmentsTable">
+    <p-table [value]="allergies" [tableStyle]="{'min-width': '80rem'}" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="caption">
+        <div class="captionHeader">
+          Alergias:
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="header">
+        <tr class="tableRow">
+          <th>Nome</th>
+          <th style="width: 5%">Ações</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-allergy>
+        <tr class="tableRow">
+          <td class="firstCell">{{allergy.nome}}</td>
+          <td>
+            <div class="iconsCell">
+              <a class="icons" (click)="delete(allergy.id)">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </a>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

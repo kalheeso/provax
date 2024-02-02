@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="login-container">
+    <app-logo [justIcon]="false"></app-logo>
+
+    <form [formGroup]="loginFormGroup" class="login-form">
+      <div class="login-field">
+        <fa-icon class="user-icon" [icon]="faUser"></fa-icon>
+        <input type="email" formControlName="username" placeholder="Email">
+      </div>
+
+      <div class="login-field">
+        <fa-icon [icon]="faLock"></fa-icon>
+        <input type="password" formControlName="password" placeholder="Senha">
+      </div>
+
+      <app-primary-btn label="ENTRAR" (click)="doLogin()"></app-primary-btn>
+      <div class="signup-container">
+        <a class="signup" (click)="createAccount()">Não possui uma conta? Cadastre-se!</a>
+      </div>
+    </form>
+  </div>
+</div>

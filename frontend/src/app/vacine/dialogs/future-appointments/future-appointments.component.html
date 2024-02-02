@@ -1,0 +1,20 @@
+<p-table [value]="futureAppointments">
+  <ng-template pTemplate="header">
+    <tr class="tableRow">
+      <th *ngFor="let coluna of displayedColumns">{{ coluna }}</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-appointment>
+    <tr class="tableRow">
+      <td class="firstCell">{{appointment.data | date:'dd/MM/yyyy hh:mm' }}</td>
+      <td>{{appointment.vacina.titulo}}</td>
+      <td [ngSwitch]="appointment.situacao">
+        <span *ngSwitchCase="0">Agendado</span>
+        <span *ngSwitchCase="1">Realizado</span>
+        <span *ngSwitchCase="2">Cancelado</span>
+      </td>
+      <td>{{appointment.vacina.doses}}</td>
+    </tr>
+  </ng-template>
+</p-table>

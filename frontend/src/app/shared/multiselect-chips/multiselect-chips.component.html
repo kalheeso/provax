@@ -1,0 +1,12 @@
+<div class="dropdown-container" [formGroup]="formGroup">
+  <label [for]="id">{{label}}</label>
+  <p-multiSelect [options]="options"
+                 [formControlName]="name"
+                 [optionLabel]="optionLabel"
+                 [showClear]="showClear"
+                 [placeholder]="placeholder"
+                 [id]="id"
+                 [optionValue]="optionValue"
+                 [readonly]="readonly"
+                 display="chip"></p-multiSelect>
+</div>

@@ -1,0 +1,39 @@
+<form class="new-appointment-container" [formGroup]="formGroup">
+  <div class="title">
+    <h2>Nova Vacina</h2>
+  </div>
+
+  <form>
+    <div class="row">
+      <div>
+        <app-text-field [formGroup]="formGroup" label="Nome:" name="titulo"></app-text-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <app-text-field [formGroup]="formGroup" label="Descrição:" name="descricao"></app-text-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-left">
+        <app-number-field [formGroup]="formGroup" label="Doses:" name="doses"></app-number-field>
+      </div>
+
+      <div class="col col-right">
+        <app-number-field [formGroup]="formGroup" label="Intervalo:" name="intervalo"></app-number-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <app-dropdown-field [formGroup]="formGroup" label="Periodicidade:" name="periodicidadeSelecionada" optionLabel="label" [options]="periodicidades"></app-dropdown-field>
+    </div>
+
+    <div class="row">
+      <div>
+        <app-primary-btn label="CADASTRAR" (click)="submeter()"></app-primary-btn>
+      </div>
+    </div>
+  </form>
+</form>

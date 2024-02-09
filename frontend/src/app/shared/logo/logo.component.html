@@ -1,0 +1,12 @@
+<div *ngIf="!justIcon" class="logo">
+  <div class="main-logo">
+    <img class="icon" src="assets/logo.png" alt="Vacine Icon">
+  </div>
+  <div *ngIf="!hideText">
+    <p class="icon-subtitle">O seu gerenciador de vacinas!</p>
+  </div>
+</div>
+
+<div *ngIf="justIcon">
+  <img class="icon" src="assets/vacine_icon.svg" alt="Vacine Icon">
+</div>

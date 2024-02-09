@@ -1,0 +1,19 @@
+<div class="new-appointment-container" [formGroup]="formGroup">
+  <div class="title">
+    <h2>Nova Alergia</h2>
+  </div>
+
+  <form>
+    <div class="row">
+      <div>
+        <app-text-field [formGroup]="formGroup" label="Nome:" name="nome"></app-text-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <app-primary-btn label="CADASTRAR" (click)="submeter()"></app-primary-btn>
+      </div>
+    </div>
+  </form>
+</div>

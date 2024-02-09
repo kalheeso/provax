@@ -1,0 +1,42 @@
+name: Roteiro
+
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  HOST_USER: ${{ vars.HOST_USER }}
+  HOST_IP: ${{ vars.HOST_IP }}
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  publish_image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: login to Docker Hub
+        run: |
+          docker login -u nogueiralegacy -p ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: build image
+        run: docker-compose build
+        working-directory: ./backend
+
+      - name: tag image
+        run: docker tag provax nogueiralegacy/provax:latest
+
+      - name: push image
+        run: |
+          docker push nogueiralegacy/provax:latest
+
+  deploy:
+    needs: publish_image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run script in host -> deploy
+        run: |
+          echo "$SSH_PRIVATE_KEY" > key.pem
+          chmod 400 key.pem
+          ssh -i key.pem -o  StrictHostKeyChecking=no $HOST_USER@$HOST_IP source /root/projects/script.sh

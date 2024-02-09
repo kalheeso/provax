@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables"
+@import "primeng/resources/themes/lara-dark-purple/theme.css"
+@import "primeng/resources/primeng.css"
+
+html
+  scroll-behavior: smooth
+
+body
+  background: $background-color !important
+  height: 100vh !important
+  box-sizing: border-box !important
+  margin: 0 !important
+  padding: 0 !important
+  font-family: $font !important
+
+.col-sm-6, .col-sm-12
+  padding: 0 15px !important
+
+.p-datatable .p-datatable-header
+  background: $input-background-color
+  color: #FFFFFF
+  border-radius: 5px 5px 0 0
+
+
+.p-inputtext, .p-dropdown, .p-multiselect
+  width: 100%
+  background: $input-background-color
+  box-sizing: border-box
+  color: $secondary-color
+  outline: none
+  border: none
+  height: $input-height
+  border-radius: 10px
+
+.p-multiselect.p-multiselect-chip .p-multiselect-token
+  background: $primary-color
+  color: $secondary-color
+  padding: 3px 5px
+  border-radius: 10px
+
+.p-dropdown-panel, .p-multiselect-panel
+  border: none
+
+  .p-multiselect-filter
+    background: $background-color
+
+  .p-dropdown-items-wrapper, .p-multiselect-header, .p-multiselect-items-wrapper
+    background: $input-background-color
+    color: $secondary-color
+
+    ul
+      padding-left: 0
+    .p-highlight
+      background: $primary-color
+
+button
+  border: none
+
+eyeicon, eyeslashicon, timesicon
+  color: $primary-color
+
+label
+  color: $label-color
+  font-size: 16px
+
+.p-password, .p-inputtext, .p-calendar, .p-dropdown, .p-multiselect
+  width: 100%
+
+p-calendar
+
+  input
+    border-radius: 10px 0 0 10px !important
+
+  .p-datepicker
+    border: 1px solid $primary-color !important
+
+  .p-datepicker, .p-datepicker-header
+    background-color: $input-background-color
+
+  .p-datepicker-trigger
+    background: $primary-color
+
+  button
+    height: $input-height !important
+    border-radius: 0 10px 10px 0 !important
+
+.p-dialog .p-dialog-header
+  background: $input-background-color !important
+  color: #FFFFFF
+  align-items: center
+  text-align: center
+
+.p-dialog .p-dialog-content
+  background: $input-background-color !important
+  color: #FFFFFF
+
+.p-dialog .p-dialog-header .p-dialog-header-icon
+  color: #d31987
+
+.p-dropdown
+  background: #383838
+
+  .p-dropdown-panel
+    background: #383838
+
+  .p-dropdown-items
+    margin: 0
+    padding: 0
+
+
+
+.p-dialog .p-dialog-footer
+  background: #383838
+
+.p-datatable
+  position: inherit
+
+.p-button
+  border-radius: 5px
+  background-color: #b01368
+  color: white
+  height: 45px
+
+.p-button:focus
+  box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px #b01368, 0 1px 2px 0 rgba(0, 0, 0, 0)
+
+.p-dropdown
+  border: #4b4949 solid 1px
+  height: 45px
+
+.p-dropdown:hover
+  border: #b01368 solid 1px
+
+.p-dropdown:not(.p-disabled).p-focus
+  box-shadow: 0 0 0 0.2rem rgba(176, 19, 104, 0.45)
+  border: #b01368 solid 1px
+
+.p-dialog .p-dialog-footer
+  display: flex
+  justify-content: space-around
+
+.p-paginator
+  background-color: #383838
+  border: 1px solid #b01368
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight
+  background-color: rgba(176, 19, 104, 0.7)

@@ -1,0 +1,16 @@
+# Conteúdo do arquivo docker-compose.yml
+
+version: '3.8'
+
+services:
+  vacinacao:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: provax
+    environment:
+      USERNAME_DATABASE: ${USERNAME_DATABASE}
+      PASSWORD_DATABASE: ${PASSWORD_DATABASE}
+      URL_DATABASE: ${URL_DATABASE}
+    ports:
+      - "8080:8080"

@@ -1,0 +1,20 @@
+<div class="textfield" [formGroup]="formGroup">
+  <label [for]="id">{{label}}</label>
+  <input *ngIf="!mask" pInputText
+         [id]="id"
+         [placeholder]="placeholder"
+         [formControlName]="name"
+         [required]="required"
+         [readOnly]="readonly"
+         [disabled]="disabled"/>
+
+  <p-inputMask *ngIf="mask"
+               [id]="id"
+               mask="{{mask}}"
+               [formControlName]="name"
+               [placeholder]="placeholder"
+               [required]="required"
+               [readonly]="readonly"
+               [disabled]="disabled"/>
+
+</div>

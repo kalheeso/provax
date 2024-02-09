@@ -1,0 +1,46 @@
+<div>
+  <div class="title">
+    <h1>Vacinas Cadastradas</h1>
+  </div>
+
+  <div class="allAppointmentsTable">
+    <p-table #table [value]="vaccines" [tableStyle]="{'min-width': '80rem'}" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="caption">
+        <div class="captionHeader">
+          Vacinas:
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="header">
+        <tr class="tableRow">
+          <th>Nome</th>
+          <th>Descricao</th>
+          <th>Doses</th>
+          <th>Periodicidade</th>
+          <th style="width: 5%">Ações</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-vaccine>
+        <tr class="tableRow">
+          <td class="firstCell">{{vaccine.titulo}}</td>
+          <td>{{vaccine.descricao ? vaccine.descricao : '-'}}</td>
+          <td>{{vaccine.doses}}</td>
+          <td [ngSwitch]="vaccine.periodicidade">
+            <p *ngSwitchCase="1">{{vaccine.intervalo + ' Dias'}}</p>
+            <p *ngSwitchCase="2">{{vaccine.intervalo + ' Semanas'}}</p>
+            <p *ngSwitchCase="3">{{vaccine.intervalo + ' Meses'}}</p>
+            <p *ngSwitchCase="4">{{vaccine.intervalo + ' Anos'}}</p>
+          </td>
+          <td>
+            <div class="iconsCell">
+              <a class="icons" (click)="delete(vaccine.id)">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </a>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

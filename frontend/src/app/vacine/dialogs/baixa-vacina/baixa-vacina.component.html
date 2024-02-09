@@ -1,0 +1,20 @@
+<div>
+  <div class="container">
+    <p class="label">Situação Atual: </p>
+    <input style="width: 200px; margin-left: 20px" type="text" pInputText [disabled]="true" [(ngModel)]="situacaoAtual" />
+  </div>
+
+  <div class="container">
+    <p class="label">Nova Situação: </p>
+    <p-dropdown class="dropdown" [options]="situacoes" [(ngModel)]="novaSituacao" optionLabel="situacao" [showClear]="true" placeholder="Nova Situação..."></p-dropdown>
+  </div>
+
+  <div class="container">
+    <p class="label">Observação: </p>
+    <textarea class="textarea" pInputTextarea cols="30" rows="3" [(ngModel)]="observacao" [autoResize]="true" placeholder="Observações sobre o agendamento..."></textarea>
+  </div>
+
+  <p-button class="button" label="Atualizar" (click)="atualizarSituacao()"></p-button>
+</div>
+
+

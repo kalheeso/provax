@@ -1,0 +1,25 @@
+<form class="new-appointment-container" [formGroup]="formGroup">
+  <div class="title">
+    <h2>Novo Agendamento</h2>
+  </div>
+
+  <form>
+    <div class="row">
+      <div>
+        <app-dropdown-field [formGroup]="formGroup" label="Qual vacina?" name="vacinaId" [options]="vacinas" optionLabel="titulo" optionValue="id"></app-dropdown-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <app-date-field [formGroup]="formGroup" label="Data:" name="data" ></app-date-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <app-primary-btn label="AGENDAR" (click)="submeter()"></app-primary-btn>
+      </div>
+    </div>
+  </form>
+</form>
